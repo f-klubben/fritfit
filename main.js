@@ -1,15 +1,15 @@
 // ======= Setup =======
-let canvas = document.getElementById("canvas");
-let ctx = canvas.getContext("2d");
-let img = new Image();
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const img = new Image();
 img.onload = () => {
     setInterval(loop, 1);
 }
 img.src = "fritfit.png"
-let animations = [
-    new BouncingDvd(),
+const animations = [
+    new Rain(),
 ]
-var needsReset = true;
+let needsReset = true;
 let curAnim = null;
 repickAnimation()
 
