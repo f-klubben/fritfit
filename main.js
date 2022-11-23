@@ -15,14 +15,6 @@ let needsReset = true;
 let curAnim = null;
 repickAnimation();
 
-// ======= Loop =======
-function loop() {
-    if (needsReset) curAnim.reset();
-    needsReset = false;
-    curAnim.draw(ctx, img);
-}
-
-// ======= Utils =======
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -32,4 +24,16 @@ function repickAnimation() {
     needsReset = true;
     curAnim = animations[Math.floor(Math.random() * animations.length)];
     canvas.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// ======= Loop =======
+function loop() {
+    if (needsReset) {
+        ctx.globalAlpha = 1.0;
+        ctx.fillStyle = "#ffffff"
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+        curAnim.reset();
+    }
+    needsReset = false;
+    curAnim.draw(ctx, img);
 }
