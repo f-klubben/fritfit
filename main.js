@@ -10,6 +10,7 @@ img.src = "fritfit.png"
 const animations = [
     new BouncingDvd(),
     new Rain(),
+    new RotatingBubbles(),
 ]
 let needsReset = true;
 let curAnim = null;
