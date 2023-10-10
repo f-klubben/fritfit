@@ -28,3 +28,11 @@ function tinted(img, color) {
 
     return buffer
 }
+
+function lerp(a, b, t) {
+    return a + (b - a) * t;
+}
+
+function easeInOutCubic(x) {
+    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+}

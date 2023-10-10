@@ -11,6 +11,7 @@ const animations = [
     new BouncingDvd(),
     new Rain(),
     new RotatingBubbles(),
+    new Quadtree(),
 ]
 let needsReset = true;
 let curAnim = null;
@@ -24,7 +25,6 @@ function resizeCanvas() {
 function repickAnimation() {
     needsReset = true;
     curAnim = animations[Math.floor(Math.random() * animations.length)];
-    canvas.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 // ======= Loop =======
